@@ -18,10 +18,84 @@
 	</div>
 	<div id="js-newGameElement" class="container">
 		<div class="row text-center">
-			<button  id="js-newGameButton" class="btn btn-default">
-				Rozpocznij grę!
+			<button  id="js-newGameButton" class="btn btn-default nowagra">
+				Rozpocznij<br>grę!
 			</button>
 		</div>
+	</div>
+
+	<div id="js-playerPickElement" class="container">
+  		<div class="row text-center">
+    		<button id="js-playerPick_rock" class="btn klik">
+      			<span class="badge">
+        			<i class="fa fa-hand-rock-o" aria-hidden="true">
+        			</i>
+      			</span>
+      			Kamień
+    		</button>
+    		<button id="js-playerPick_paper"  class="btn klik">
+      			<span class="badge">
+      				<i class="fa fa-hand-paper-o" aria-hidden="true">
+      				</i>
+      			</span>
+      			Papier
+    		</button>
+    		<button id="js-playerPick_scissors"  class="btn klik">
+      			<span class="badge">
+      				<i class="fa fa-hand-scissors-o" aria-hidden="true">
+      				</i>
+      			</span>
+      			Nożyce
+    		</button>
+  		</div>
+	</div>
+
+	<div id="js-resultsTableElement" class="container">
+    	<div class="row">
+    		<div class="col-xs-5 text-center">
+      			<span id="js-playerPoints" class="badge">
+      				0
+      			</span>
+      			<span id="js-playerName">
+      				Imię gracza
+      			</span>
+    		</div>
+    		<div class="col-xs-2 text-center">
+    			PRZECIWKO
+    		</div>
+    		<div class="col-xs-5 text-center">
+      			<span id="js-computerPoints" class="badge">
+      				0
+      			</span>
+      			Zaawansowana sztuczna inteligencja
+    		</div>
+  		</div>
+  		<div class="row">
+    		<div class="col-xs-5 text-center">
+      			<span id="js-playerPick">
+        			Gracz wybrał
+      			</span>
+    	</div>
+    		<div class="col-xs-2"></div>
+    		<div class="col-xs-5 text-center">
+        		<span id="js-computerPick">
+        		Komputer wybrał
+        		</span>
+    		</div>
+    	</div>
+  		<div class="row">
+    		<div class="col-xs-5 text-center">
+      			<span id="js-playerResult">
+        			Punkty gracza
+      			</span>
+    		</div>
+    		<div class="col-xs-2"></div>
+    		<div class="col-xs-5 text-center">
+      			<span id="js-computerResult">
+        			Punkty przeciwnika
+      			</span>
+    		</div>
+  		</div>
 	</div>
 	<script type="text/javascript" src="skrypty.js"></script>
 </body>

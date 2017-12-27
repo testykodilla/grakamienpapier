@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+body {
+	background-color: #7D649A;
+	color: #FFAAAA;
+	font-size: 2em;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.nowagra, .klik {
+	padding: 20px;
+	font-size: 30px;
+	background-color: #5C3B84;
+	color: #FFAAAA;
+	margin: 15px;
+	border-radius: 100%;
+}
+
+.nowagra {
+	height: 200px;
+	width: 200px;
+}
+
+.nowagra:hover {
+	background-color: #7D649A;
+}
