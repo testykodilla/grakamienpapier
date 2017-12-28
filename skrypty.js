@@ -29,10 +29,10 @@ function setGameElements() {
         	newGameElem.style.display = 'none';
         	pickElem.style.display = 'block';
         	resultsElem.style.display = 'block';
-      	break;
+        	break;
 
     	case 'ended':
-        	newGameBtn.innerText = 'Zagraj jeszcze raz!';
+        	newGameBtn.innerText = 'Jeszcze raz!';
         	newGameElem.style.display = 'block';
         	pickElem.style.display = 'none';
         	resultsElem.style.display = 'none';
@@ -73,11 +73,6 @@ var playerPickElem = document.getElementById('js-playerPick'),
     playerResultElem = document.getElementById('js-playerResult'),
     computerResultElem = document.getElementById('js-computerResult');
 
-function playerPick(playerPick) {
-    var computerPick = getComputerPick();
-    playerPickElem.innerHTML = playerPick;
-    computerPickElem.innerHTML = computerPick;
-}
 function setGamePoints() {
     playerPointsElem.innerHTML = player.score;
     computerPointsElem.innerHTML = computer.score;
@@ -109,37 +104,36 @@ function checkRoundWinner(playerPick, computerPick) {
 }
 
 function wygrana() {
-	alert("Gratulacje! Wygrałeś!");
-		newGameBtn.innerText = 'Jeszcze raz!';
-        newGameElem.style.display = 'block';
-        pickElem.style.display = 'none';
-        resultsElem.style.display = 'none';
+	alert("Gratulacje! "+ player.name +" wygrywa!");
+	gameState = 'ended';
 }
 
 function przegrana() {
 	alert("Niestety przegrałeś");
-		newGameBtn.innerText = 'Jeszcze raz!';
-        newGameElem.style.display = 'block';
-        pickElem.style.display = 'none';
-        resultsElem.style.display = 'none';
+	gameState = 'ended';
 }
 
 function sprawdzCzyWygrales() {
 	if (player.score == 5) {
 		playerPointsElem.innerHTML == "5";
-		setTimeout(wygrana(), 1000);
-		
+		setTimeout(wygrana, 100);
+		gameState = 'ended';
+		setTimeout(setGameElements, 100);
+
 	} else if (computer.score == 5) {
 		computerPointsElem.innerHTML == "5";
-		setTimeout(przegrana(), 1000);
+		setTimeout(przegrana, 100);
+		gameState = 'ended';
+		setTimeout(setGameElements, 100);
 	}
 }
 
 function playerPick(playerPick) {
     var computerPick = getComputerPick();
-    checkRoundWinner(playerPick, computerPick);
     playerPickElem.innerHTML = playerPick;
     computerPickElem.innerHTML = computerPick;
+    checkRoundWinner(playerPick, computerPick);
+    setGamePoints();
     sprawdzCzyWygrales();
 }
 
