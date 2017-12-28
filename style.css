@@ -24,3 +24,13 @@ body {
 .nowagra:hover {
 	background-color: #7D649A;
 }
+
+h3 {
+	margin-top: 20vh;
+	margin-bottom: 10vh;
+	font-size: 2em;
+}
+
+.pkt {
+	font-size: 2em;
+}
